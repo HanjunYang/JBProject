@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>다운로드 테스트</title>
+</head>
+<body>
+<form action = "/download" method="post">
+    <table style="text-align:center" border="1">
+        <thead>
+        <tr>
+            <td><b>파일 이름</b></td>
+            <td><b>파일 용량</b></td>
+            <td><b>파일 경로</b></td>
+            <td><b>다운로드</b></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each = "serverfiles : ${serverfiles}">
+            <td th:text = "${serverfiles.filename}"  name="filename"></td>
+            <td th:text = "${serverfiles.filesize}" name = "fileSize"></td>
+            <td th:text = "${serverfiles.filepath}" name = "filePath"></td>
+            <td> <a href="${serverfiles.filepath}" download><button type="button">다운로드</button></a></td>
+        </tr>
+        </tbody>
+
+    </table>
+</form>
+
+</body>
+</html>

@@ -17,16 +17,19 @@ public class MemberService {
 
 
     public String saveId(Member member){
-        this.validateDuplicateMember(member);
+//        this.validateDuplicateMember(member);
         memberRepository.save(member);
          return member.getMemberId();
     }
 
-    public void validateDuplicateMember(Member member) {
-        this.memberRepository.findByMemberId(member.getMemberId()).ifPresent(member1 -> {
-            throw new IllegalStateException("이미 중복된 아이디입니다.");
-        });
-    }
+//    public void validateDuplicateMember(Member member) {
+//        this.memberRepository.findByMemberId(member.getMemberId()).ifPresent(member1 -> {
+//            throw new IllegalStateException("이미 중복된 아이디입니다.");
+//        });
+//    }
+
+
+
 
 //    public lostFindId(){
 //        Member member = new Member();

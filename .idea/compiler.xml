@@ -14,7 +14,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="JBProject" options="-parameters" />
+      <module name="JBProject" options="-parameters -Xlint:all" />
     </option>
   </component>
 </project>

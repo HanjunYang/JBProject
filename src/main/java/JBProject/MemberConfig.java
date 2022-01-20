@@ -17,6 +17,7 @@ public class MemberConfig {
     public MemberConfig(EntityManager em){
         this.em = em;
     }
+
     @Bean
     public MemberService memberService(){
         return new MemberService(MemberRepository());
@@ -25,6 +26,5 @@ public class MemberConfig {
     public MemberRepository MemberRepository() {
         return new JPAMemberRepository(em);
     }
-
 
 }

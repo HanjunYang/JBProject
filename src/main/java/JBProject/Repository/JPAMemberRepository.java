@@ -1,14 +1,11 @@
 package JBProject.Repository;
 
 import JBProject.Domain.Member;
-import org.springframework.stereotype.Repository;
-
 
 import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
 public class JPAMemberRepository implements MemberRepository{
 
     private final EntityManager em;
@@ -20,9 +17,7 @@ public class JPAMemberRepository implements MemberRepository{
 
     @Override
     public Member save(Member member) {
-        System.out.println("aaaaaaaaaaaaaaa");
         em.persist(member);
-        System.out.println("member = " + member.getMemberName());
         return member;
     }
 
@@ -49,6 +44,15 @@ public class JPAMemberRepository implements MemberRepository{
                 .getResultList();
 
         return result.stream().findAny();
+    }
+
+    @Override
+    public Optional<Member> LoginInfo(String memberId) {
+         List<Member> result = em.createQuery("select m.memberPw from Member m where m.memberId = :memberId",Member.class)
+                .setParameter("memberId", memberId)
+                .getResultList();
+        return result.stream().findAny();
+
     }
 
     @Override
