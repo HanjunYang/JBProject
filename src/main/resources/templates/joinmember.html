@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action = "/joinMember" method="post">
+        <div class="form-group">
+          <p><label for = "memberId"></label>
+            <input type = "text" id = "memberId" name="memberId" placeholder="id를 입력하세요" style="width:300px">
+          </p>
+          <p><label for = "memberPw1"></label>
+            <input type = "text" id = "memberPw1" name="memberPw1" placeholder="암호를 입력하세요" style="width:300px">
+          </p>
+          <p><label for = "memberPw2"></label>
+            <input type = "text" id = "memberPw2" name="memberPw2" placeholder="암호를 한번 더 입력하세요" style="width:300px">
+          </p>
+          <p><label for = "memberName"></label>
+            <input type = "text" id = "memberName" name="memberName" placeholder="이름" style="width:300px">
+
+          <p><label for = "memberPhone"></label>
+            <input type = "text" id = "memberPhone" name="memberPhone" placeholder="번호를 띄지말고 입력해주세요" style="width:300px">
+          </p>
+
+        <button type ="submit" onclick="기모찌">입력</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
